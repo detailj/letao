@@ -29,25 +29,25 @@
         </div>
         <div class="content">
             <ul>
-                <li class='active'>
-                    <a href="javascript:void(0);">
+                <li class=''>
+                    <a href="user.html">
                         <span class='glyphicon glyphicon-user'></span>用户管理</a>
                 </li>
                 <li>
                     <a href="javascript:void(0);">
-                        <span class='glyphicon glyphicon-list'></span>用户管理</a>
+                        <span class='glyphicon glyphicon-list'></span>分类管理</a>
                     <ol>
                         <li>
-                            <a href="javascript:void(0)">一级分类</a>
+                            <a href="first.html">一级分类</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">二级分类</a>
+                            <a href="second.html">二级分类</a>
                         </li>
                     </ol>
                 </li>
                 <li>
-                    <a href="javascript:void(0);">
-                        <span class='glyphicon glyphicon-tags'></span>用户管理</a>
+                    <a href="products.html">
+                        <span class='glyphicon glyphicon-tags'></span>商品管理</a>
                 </li>
             </ul>
         </div>
@@ -55,7 +55,7 @@
     <!-- 主体区域 -->
     <div class="lt_main">
         <div class="header">
-            <a class='glyphicon glyphicon-qrcode pull-left' href="javascript:void(0)"></a>
+            <a class='glyphicon glyphicon-th-list pull-left' href="javascript:void(0)"></a>
             <a class='glyphicon glyphicon-log-out pull-right' href="javascript:void(0)"></a>
         </div>
         <div class="content clearfix">
@@ -65,7 +65,7 @@
                     <a href="#">管理系统</a>
                 </li>
                 <li>
-                    用户管理
+                    首页
                 </li>
             </ol>
             <!-- 圖表 -->
@@ -73,6 +73,31 @@
             <div id="main_right" class='pull-right' style="width: 600px;height:400px; right:0"></div>
         </div>
     </div>
+    <!-- 模态框 -->
+    <div class="modal fade modal-sure" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class='text-danger'>
+                        <span class='glyphicon glyphicon-info-sign
+                            '></span> 您确定要退出后台管理系统吗?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-danger">确定</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 </body>
 
 </html>
@@ -82,5 +107,7 @@
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <!-- echarts -->
 <script src="./lib/echarts/echarts.min.js"></script>
+<!-- 公共的js -->
+<script src="./js/common.js"></script>
 <!-- 自己的js -->
 <script src="./js/index.js"></script>

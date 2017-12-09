@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +7,11 @@
     <title>Document</title>
     <!-- 导入bootstrap的css -->
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
-    <!-- 引入插件的样式 -->
-    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
     <!-- 导入样式 -->
     <link rel="stylesheet" href="./css/base.css">
     <!-- 引入自己的css -->
     <link rel="stylesheet" href="./css/index.css">
-
 </head>
-
 <body>
     <!-- 边栏 -->
     <div class="lt_aside">
@@ -57,7 +52,7 @@
     <!-- 主体区域 -->
     <div class="lt_main">
         <div class="header">
-            <a class='glyphicon glyphicon-qrcode pull-left' href="javascript:void(0)"></a>
+            <a class='glyphicon glyphicon-th-list pull-left' href="javascript:void(0)"></a>
             <a class='glyphicon glyphicon-log-out pull-right' href="javascript:void(0)"></a>
         </div>
         <div class="content ">
@@ -73,29 +68,12 @@
                     一级分类
                 </li>
             </ol>
-
-            <!-- 按钮 -->
-            <button data-toggle="modal" data-target=".modal-add" class='btn btn-default mb_30'>添加分类</button>
             <!-- 圖表 -->
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>序号</th>
-                        <th>分类名称</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>男士精品</td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- 分页控件 -->
-            <ul id='pagintor'></ul>
+            <div id="main_left" class='pull-left' style="width: 600px;height:400px;"></div>
+            <div id="main_right" class='pull-right' style="width: 600px;height:400px; "></div>
         </div>
     </div>
-    <!-- 模态框  登出-->
+    <!-- 模态框 -->
     <div class="modal fade modal-sure" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -108,7 +86,7 @@
                 <div class="modal-body">
                     <p class='text-danger'>
                         <span class='glyphicon glyphicon-info-sign
-                        '></span> 你想清楚了?真的要走??</p>
+                        '></span> 您确定要退出后台管理系统吗?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -120,61 +98,17 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-    <!-- 新增modal -->
-    <div class="modal fade modal-add" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title">添加分类</h4>
-                </div>
-                <div class="modal-body">
-                    <form id="firstForm">
-                        <div class="form-group">
-                            <input type="text" name="categoryName" class="form-control" id="exampleInputEmail1" placeholder="请输入一级分类名称">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <!-- 关联form  form属性 跟 form的 id 相关联即可-->
-                    <button type="submit" form="firstForm" class="btn btn-primary">确定</button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
 </body>
-
 </html>
+
 <!-- 导入jq -->
 <script src="./lib/jquery/jquery.min.js"></script>
 
 <!-- 导入bs的js -->
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-<!-- echarts -->1
+<!-- echarts -->
 <script src="./lib/echarts/echarts.min.js"></script>
-<!-- 导入模板引擎 -->
-<script src="./lib/artTemplate/template.js"></script>
-<!-- 定义模板 -->
-<script id='first' type="text/html">
-    {{each rows}}
-    <tr>
-        <!-- (页码-1)*页容量+1+index -->
-        <td>{{(page-1)*size+1+$index}}</td>
-        <td>{{$value.categoryName}}</td>
-    </tr>
-    {{/each}}
-</script>
-<!-- 引入分页插件 -->
-<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
-<!-- 引入验证插件 -->
-<script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <!-- 公共的js -->
 <script src="./js/common.js"></script>
 <!-- 自己的js -->
-<script src="./js/first.js"></script>
+<script src="./js/index.js"></script>

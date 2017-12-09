@@ -39,6 +39,37 @@ $(function () {
     getData();
 
 
+    // 需求2 为禁用 启用绑定事件
+    $('tbody').on('click','button',function(){
+        console.log('click');
+        // id
+        var id = $(this).parent().attr('data-id');
+        var isDelete = undefined;
+        // isDelete
+        // 判断启用禁用
+        if($(this).html()=='启用'){
+            console.log('启用');
+             isDelete = 0;
+        }else{
+            // 禁用逻辑
+             isDelete = 1;
+        }
+        // console.log(id+'|'+isDelete);
+        $.ajax({
+            url:"/user/updateUser",
+            data:{
+                id:id,
+                isDelete:isDelete
+            },
+            type:'post',
+            success:function(backData){
+                console.log(backData);
+                // 重新获取当前页数据
+                getData();
+            }
+        })
+    })
+
 
 
 })
