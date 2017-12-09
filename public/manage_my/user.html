@@ -88,9 +88,10 @@
                             <button type="" class="btn btn-danger">禁用</button>
                         </td>
                     </tr>
-                  
+
                 </tbody>
             </table>
+            <ul id="pagintor"></ul>
 
 
         </div>
@@ -127,9 +128,36 @@
 <script src="./lib/jquery/jquery.min.js"></script>
 <!-- 导入bs的js -->
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- 导入分页插件 -->
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <!-- echarts -->
 <script src="./lib/echarts/echarts.min.js"></script>
+<!-- 导入模版引擎 -->
+<script src="./lib/artTemplate/template.js"></script>
+<!-- 定义模版 挖坑 起名字 -->
+<script type='text/html' id='user'>
+    {{each rows}}
+    <tr>
+        <!-- 第一页   1 2 3 4 5   (1-1)*5 = 0   (1-1)*5 = 0 -->
+        <!-- 第二页   6 7 8 9 10 -->
+        <!-- 第n页    (页码-1)*页容量 +1 起始索引(页码-1)*页容量 +1+$index   -->
+        <td>{{(page-1)*size+1+$index}}</td>
+        <td>{{$value.username}}</td>
+        <td>{{$value.mobile}}</td>
+        <td>
+            {{if $value.isDelete==0}} 正常 {{else}} 已禁用 {{/if}}
+        </td>
+        <td>
+            {{if $value.isDelete==0}}
+            <button type="" class="btn btn-danger">禁用</button>
+            {{else}}
+            <button type="" class="btn btn-primary">启用</button>
+            {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+</script>
 <!-- 公共的js -->
 <script src="./js/common.js"></script>
 <!-- 自己的js -->
-<script src="./js/index.js"></script>
+<script src="./js/user.js"></script>
