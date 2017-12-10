@@ -17,14 +17,14 @@ $(function () {
                 $("#pagintor").bootstrapPaginator({
                     bootstrapMajorVersion: 3, //默认是2，如果是bootstrap3版本，这个参数必填
                     currentPage: myPageNum, //当前页
-                    totalPages: Math.ceil(backData.total/backData.size), //总页数
+                    totalPages: Math.ceil(backData.total / backData.size), //总页数
                     size: "small", //设置控件的大小，mini, small, normal,large
                     onPageClicked: function (event, originalEvent, type, page) {
                         console.log(event)// 插件封装的事件参数
                         console.log(originalEvent);// 原始事件参数
                         console.log(type);// 点的按钮类型是什么
                         // 为按钮绑定点击事件 page:当前点击的按钮值
-                        myPageNum =page;
+                        myPageNum = page;
                         // 重新获取数据
                         getData();
                     }
@@ -33,7 +33,7 @@ $(function () {
             }
         })
     }
-   
+
     // 默认调用一次
     getData();
 
@@ -63,43 +63,43 @@ $(function () {
 
     // 2.初始化文件上传
     $("#fileUpload").fileupload({
-        dataType:"json",
+        dataType: "json",
         //e：事件对象
         //data：图片上传后的对象，通过e.result.picAddr可以获取上传后的图片地址
-        done:function (e, data) {
-          console.log(data);
-          console.log(data.result.picAddr);
-          // 设置给img
-          $('form img').attr('src',data.result.picAddr);
+        done: function (e, data) {
+            console.log(data);
+            console.log(data.result.picAddr);
+            // 设置给img
+            $('form img').attr('src', data.result.picAddr);
         }
-      });
+    });
 
     // 3.页面打开 获取 分类数据 渲染到页面上
     $.ajax({
-        url:"/category/queryTopCategoryPaging",
-        data:{
-            page:1,
-            pageSize:266
+        url: "/category/queryTopCategoryPaging",
+        data: {
+            page: 1,
+            pageSize: 266
         },
-        success:function(backData){
+        success: function (backData) {
             console.log(backData);
             // 代码清空
             $('.dropdown-menu').html('');
             // 循环随意的数组
-            $.each(backData.rows,function(i,n){
+            $.each(backData.rows, function (i, n) {
                 // console.log(i+"|"+n);
                 console.log(n);
                 // 生成li>a
-                var $li = $("<li><a href='javascript:void(0)'>"+n.categoryName+"</a></li>");
+                var $li = $("<li><a href='javascript:void(0)'>" + n.categoryName + "</a></li>");
 
                 // 添加到ul中
                 $('.dropdown-menu').append($li);
             })
         }
     })
-    
+
     // 4.绑定事件给ul
-    $('.dropdown-menu').on('click','a',function(){
+    $('.dropdown-menu').on('click', 'a', function () {
         // 点击的文本
         var clickName = $(this).html();
         console.log(clickName);
