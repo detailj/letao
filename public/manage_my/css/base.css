@@ -123,3 +123,12 @@ body {
 .lt_main .content {
     padding: 30px 20px 0;
 }
+
+/* 遮挡样式 */
+ 
+#fileUpload {
+    position: absolute;
+    opacity: 0;
+    width: 82px;
+    height: 34px;
+}
