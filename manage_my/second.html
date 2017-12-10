@@ -8,6 +8,8 @@
     <title>Document</title>
     <!-- 导入bootstrap的css -->
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!-- 引入表单验证插件css -->
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
     <!-- 导入样式 -->
     <link rel="stylesheet" href="./css/base.css">
     <!-- 引入自己的css -->
@@ -148,10 +150,12 @@
                                         <a href="#">Action</a>
                                     </li>
                                 </ul>
+                                <!-- 分类id -->
+                                <input type="text" hidden name="categoryId">
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="请输入二级分类名称">
+                            <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类名称">
                         </div>
                         <div class="form-group">
                             <!-- 设置文件上传控件的属性 -->
@@ -161,6 +165,8 @@
                         </div>
                         <div class="form-group">
                             <img style="width:100px;height:100px;" src="./images/none.png" alt="">
+                            <!-- 用来保存图片路径 -->
+                            <input type="text" name="brandLogo" hidden>
                         </div>
                     </form>
                 </div>
@@ -205,6 +211,8 @@
 <!-- 引入jQuery上传插件 -->
 <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
 <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
+<!-- 引入表单验证插件 -->
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <!-- 公共的js -->
 <script src="./js/common.js"></script>
 <!-- 自己的js -->
