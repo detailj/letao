@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/base.css">
     <!-- 引入自己的css -->
     <link rel="stylesheet" href="./css/index.css">
+
 </head>
 
 <body>
@@ -39,7 +40,7 @@
                         <span class='glyphicon glyphicon-list'></span>分类管理</a>
                     <ol>
                         <li>
-                            <a style='color:white' href="first.html">一级分类</a>
+                            <a href="first.html">一级分类</a>
                         </li>
                         <li>
                             <a href="second.html">二级分类</a>
@@ -56,7 +57,7 @@
     <!-- 主体区域 -->
     <div class="lt_main">
         <div class="header">
-            <a class='glyphicon glyphicon-th-list pull-left' href="javascript:void(0)"></a>
+            <a class='glyphicon glyphicon-qrcode pull-left' href="javascript:void(0)"></a>
             <a class='glyphicon glyphicon-log-out pull-right' href="javascript:void(0)"></a>
         </div>
         <div class="content ">
@@ -68,7 +69,6 @@
                 <li>
                     商品管理
                 </li>
-
             </ol>
             <!-- 按钮 modal -->
             <button class="btn btn-default mb_30" data-toggle="modal" data-target=".modal-add">添加商品</button>
@@ -117,7 +117,7 @@
                 <div class="modal-body">
                     <p class='text-danger'>
                         <span class='glyphicon glyphicon-info-sign
-                        '></span> 您确定要退出后台管理系统吗?</p>
+                        '></span> 你想清楚了?真的要走??</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -131,33 +131,55 @@
     <!-- /.modal -->
     <!-- 新增modal -->
     <div class="modal fade modal-add" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-dialog " role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title">温馨提示</h4>
+                    <h4 class="modal-title">新增商品</h4>
                 </div>
                 <div class="modal-body">
-                    <p class='text-danger'>
-                        <span class='glyphicon glyphicon-info-sign
-                            '></span> 你想清楚了?真的要走??</p>
+                    <!-- 表单 -->
+                    <form id="form">
+                        <div class="form-group">
+                            <input name="proName" type="text" class="form-control" placeholder="请输入商品名称">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="proDesc" class="form-control" rows="3" placeholder="请输入商品描述"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input name="num" type="text" class="form-control" placeholder="请输入商品库存">
+                        </div>
+                        <div class="form-group">
+                            <input name="price" type="text" class="form-control" placeholder="请输入商品价格">
+                        </div>
+                        <div class="form-group">
+                            <input name="oldPrice" type="text" class="form-control" placeholder="请输入商品名原价">
+                        </div>
+                        <div class="form-group">
+                            <input name="size" type="text" class="form-control" placeholder="请输入商品尺码">
+                        </div>
+                        <div class="form-group">
+                            <input id="fileUpload" type="file" class="form-control" name="pic1" data-url="/product/addProductPic">
+                            <a class="btn btn-default" href="javascript:void(0)">上传图片</a>
+                            <span>提示:必须上传三个图片</span>
+                            <br>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-danger">确定</button>
+                    <button type="submit" form="form" class="btn btn-danger">确定</button>
                 </div>
             </div>
             <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
     </div>
-   
 </body>
 
 </html>
-
 <!-- 导入jq -->
 <script src="./lib/jquery/jquery.min.js"></script>
 
@@ -170,23 +192,26 @@
 <!-- 定义模板 -->
 <script id='products' type="text/html">
     {{each rows}}
-        <tr>
-            <td>{{(page-1)*size+1+$index}}</td>
-            <td>{{$value.proName}}</td>
-            <td>{{$value.proDesc}}</td>
-            <td>{{$value.num}}</td>
-            <td>{{$value.size}}</td>
-            <td>{{$value.statu}}</td>
-            <td>
-                <button class="btn btn-danger">下架</button>
-                <button class="btn btn-primary">编辑</button>
-            </td>
-        </tr>
+    <tr>
+        <td>{{(page-1)*size+1+$index}}</td>
+        <td>{{$value.proName}}</td>
+        <td>{{$value.proDesc}}</td>
+        <td>{{$value.num}}</td>
+        <td>{{$value.size}}</td>
+        <td>{{$value.statu}}</td>
+        <td>
+            <button class="btn btn-danger">下架</button>
+            <button class="btn btn-primary">编辑</button>
+        </td>
+    </tr>
     {{/each}}
 </script>
 <!-- 表单验证 -->
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<!-- jQ 文件上传插件 -->
+<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
 <!-- 公共的js -->
 <script src="./js/common.js"></script>
 <!-- 自己的js -->
-<script src="./js/index.js"></script>
+<script src="./js/products.js"></script>
