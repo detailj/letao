@@ -1,0 +1,31 @@
+/* 内容 左侧样式 */
+.lt_content {
+    display: flex;
+}
+
+.content_left {
+    width: 90px;
+    position: relative;
+}
+
+.content_left ul {}
+
+.content_left ul li {}
+
+.content_left ul li.active {}
+
+.content_left ul li:actve a {
+    background-color: white;
+    border-right-color: transparent;
+}
+
+.content_left ul li a {
+    height: 50px;
+    display: block;
+    line-height: 50px;
+    color: gray;
+    background-color: pink;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    text-align: center;
+}

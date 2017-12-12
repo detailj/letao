@@ -1,0 +1,34 @@
+/* 列表的布局 */
+.shop-car-list{}
+.shop-car-list li{}
+.shop-car-list li{}
+.shop-car-list li .left{
+    padding: 10px;
+}
+.shop-car-list li .mui-media-body{
+    font-size:14px;
+}
+.shop-car-list li .mui-media-body p{
+    white-space:normal;
+}
+.shop-car-list li .mui-media-body .price-container{
+    padding: 8px 0;
+}
+.shop-car-list li .mui-media-body .price-container span{
+    line-height: 21px;
+}
+.shop-car-list li .mui-media-body .price-container span.price{
+    color:red;
+    font-size:13px;
+}
+.shop-car-list li .mui-media-body .price-container span.old-price{
+    color:gray;
+    text-decoration: line-through;
+    font-size:12px;
+}
+.shop-car-list li .mui-media-body .price-container span.num{
+    color:gray;
+}
+.shop-car-list li .mui-media-body p{
+    color:gray;
+}
