@@ -33,7 +33,7 @@ $(function () {
             }
         })
     }
-   
+
     // 默认调用一次
     getData();
 
@@ -160,10 +160,17 @@ $(function () {
         e.preventDefault();
         console.log('成功了');
         $.ajax({
+<<<<<<< HEAD
             url: "/category/addSecondCategory",
             data: $("form").serialize(),
             type: "post",
             success: function (backData) {
+=======
+            url:"/category/addSecondCategory",
+            data:$("form").serialize(),
+            type:"post",
+            success:function(backData){
+>>>>>>> product
                 console.log(backData);
                 // 重新获取数据 页面不会刷新
                 getData();
@@ -173,7 +180,11 @@ $(function () {
                 // 清空表单数据
                 $("form").data('bootstrapValidator').resetForm();
                 $('form input').val('');
+<<<<<<< HEAD
                 $('form img').attr('src', './images/none.png');
+=======
+                $('form img').attr('src','./images/none.png');
+>>>>>>> product
                 $('.select-value').html('请选择');
 
                 // 刷新页面

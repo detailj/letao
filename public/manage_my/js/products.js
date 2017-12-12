@@ -41,9 +41,6 @@ $(function () {
         //data：图片上传后的对象，通过e.result.picAddr可以获取上传后的图片地址
         done: function (e, data) {
             // console.log(data);
-<<<<<<< HEAD
-            $('<img style="width:100px;height:100px;" src="'+data.result.picAddr+'"></img>').appendTo('form .form-group:last');
-=======
             $('<img style="width:100px;height:100px;" src="' + data.result.picAddr + '"/>').appendTo('form .form-group:last');
 
             // 加到了 3张
@@ -51,20 +48,13 @@ $(function () {
                 // 人为更新字段
                 $('form').data('bootstrapValidator').updateStatus('pic1', 'VALID');
             }
->>>>>>> product
         }
     });
 
     // 3.超出 禁止选择图片
-<<<<<<< HEAD
-    $('#fileUpload').click(function(event){
-        // 图片==3
-        if($('form .form-group:last img').length==3){
-=======
     $('#fileUpload').click(function (event) {
         // 图片==3
         if ($('form .form-group:last img').length == 3) {
->>>>>>> product
             // 阻止file的 默认行为
             event.preventDefault();
         }
@@ -72,17 +62,11 @@ $(function () {
     })
 
     // 4.双击 form 最下面的图片 删除自己
-<<<<<<< HEAD
-    $('form .form-group:last').on('dblclick','img',function(){
-=======
     $('form .form-group:last').on('dblclick', 'img', function () {
->>>>>>> product
         console.log('你双击我啦');
         // 干掉自己
         $(this).remove();
     })
-<<<<<<< HEAD
-=======
 
     // 5.数据验证
     $('form').bootstrapValidator({
@@ -192,5 +176,4 @@ $(function () {
             }
         })
     });
->>>>>>> product
 })
