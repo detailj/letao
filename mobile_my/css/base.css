@@ -46,7 +46,7 @@ ul,ol{
 .lt_content{
     /* flex 使用 剩余尺寸 */
     flex:110;
-    background-color: orange;
+    /* background-color: orange; */
     position: relative;
     overflow: hidden;
 }

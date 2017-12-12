@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
     <!-- 导入css -->
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/shoppingCar.css">
+    <link rel="stylesheet" href="./css/register.css">
 </head>
 
 <body>
@@ -21,36 +21,42 @@
             <a href="javascript:void(0)">
                 <span class="fa fa-chevron-left"></span>
             </a>
-            <h4>购物车</h4>
+            <h4>用户注册</h4>
             <a href="javascript:void(0)">
                 <span class="fa fa-search"></span>
             </a>
         </div>
         <div class="lt_content">
-            <ul class="mui-table-view shop-car-list">
-                <li class="mui-table-view-cell mui-media">
-                    <a href="javascript:;">
-                        <div class="left  mui-pull-left">
-                            <img class="mui-media-object" src="./images/product.jpg">
-                            <input  style='display:block' type="checkbox">
-                        </div>
+            <form class="mui-input-group register-form">
+                <div class="mui-input-row mui-password">
+                    <input type="password" class="mui-input-password" data-input-password="3">
+                </div>
+                <div class="mui-input-row mui-password">
+                    <input type="password" class="mui-input-password" data-input-password="3">
+                    <span class="mui-icon mui-icon-eye"></span>
+                </div>
+                <div class="mui-input-row mui-password">
+                    <input type="password" class="mui-input-password" data-input-password="3">
+                    <span class="mui-icon mui-icon-eye"></span>
+                </div>
+                <div class="mui-input-row mui-password">
+                    <input type="password" class="mui-input-password" data-input-password="3">
+                </div>
+                <div class="mui-input-row mui-password">
+                    <input type="password" class="mui-input-password" data-input-password="3">
+                    <button class="mui-btn mui-btn-primary">获取验证码</button>
+                </div>
 
-                        <div class="mui-media-body">
-                            <p>匡威三星标1970s converse复刻 142334c 144757c三星标黑色高帮</p>
-                            <div class="price-container mui-clearfix">
-                                <span class="price mui-pull-left">¥499.1</span>
-                                <span class="old-price mui-pull-left">¥500</span>
-                                <span class="num mui-pull-right">一双</span>
-                            </div>
-                            <p>鞋码:&nbsp;50</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="lt_order_list">
-            <p>订单总金额:<span>RMB:00.0</span></p>
-            <button class="mui-btn mui-btn-danger">生成订单</button>
+                <div class="mui-button-row">
+                    <button type="submit" class="mui-btn mui-btn-primary">注册</button>
+                </div>
+            </form>
+            <!-- .form-bottom>(input[type="checkbox"]+span{ 我同意《会员服务协议》})+a[href='javascript:void(0)']{立即登陆} -->
+            <div class="form-bottom mui-clearfix">
+                <input class="mui-pull-left" type="checkbox">
+                <span class="mui-pull-left"> 我同意《会员服务协议》</span>
+                <a class="mui-pull-right" href="javascript:void(0)">立即登陆</a>
+            </div>
         </div>
         <div class="lt_footer">
             <!-- ul>li*4>a[href="javascript:void(0)"]>span.fa.fa-home+p{首页} -->

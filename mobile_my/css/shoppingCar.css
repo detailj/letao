@@ -1,3 +1,6 @@
+.lt_content{
+    background-color: transparent;
+}
 /* 列表的布局 */
 .shop-car-list{}
 .shop-car-list li{}
@@ -31,4 +34,24 @@
 }
 .shop-car-list li .mui-media-body p{
     color:gray;
+}
+
+/* 底部的 总金额 */
+.lt_order_list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    box-shadow: 0 0px 2px hotpink;
+}
+.lt_order_list p{
+    color:red;
+    font-size:12px;
+}
+.lt_order_list p span{}
+.lt_order_list button{
+    border-radius: 0;
+    background-color: red;
+    font-size:12px;
+    border-color: red;
 }
