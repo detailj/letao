@@ -258,5 +258,29 @@
 
 </html>
 <!-- 导入mui -->
-<script src="./lib/zepto/zepto.min.js"></script><script src="./lib/mui/js/mui.min.js"></script>
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/mui/js/mui.min.js"></script>
+<!-- 导入模板引擎 -->
+<script src="./lib/artTemplate/template.js"></script>
+<!-- 定义模板 -->
+<script id='leftList' type="text/html">
+    {{each rows}}
+        <li>
+            <a data-id="{{$value.id}}" href="javascript:void(0)">{{$value.categoryName}}</a>
+        </li>
+    {{/each}}
+</script>
+<!-- 定义模板2 -->
+<script id='rightList' type="text/html">
+    {{each rows}}
+        <li>
+            <a href="javascript:void(0)">
+                <img src="{{$value.brandLogo}}" alt="">
+                <p>{{$value.brandName}}</p>
+            </a>
+        </li>
+    {{/each}}
+</script>
 <script src="./js/common.js"></script>
+<!-- 引入自己的js -->
+<script src="./js/category.js"></script>
